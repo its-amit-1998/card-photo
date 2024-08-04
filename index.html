@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Card Creator</title>
+    <link rel="stylesheet" href="styles.css?v=1.0">
+</head>
+<body>
+    <div id="preloader">
+        <img src="images/ccfc.webp?v=1.0" alt="Logo" id="preloader-logo">
+    </div>
+    <div class="card-container" id="card-container">
+        <div class="card">
+            <img id="base-image" src="images/CCFCTOPLAYER.png?v=1.0" alt="Card Base">
+            <div class="overlay">
+                <!-- <input type="file" id="upload-image" accept="image/*" capture="camera" style="display:none;"> -->
+                <video id="camera-view" autoplay playsinline style="display:none;"></video>
+                <canvas id="camera-canvas" style="display:none;"></canvas>
+                <img id="frame" src="images/ccfcframe.png" alt="Frame" style="display:none;">
+                <button id="take-photo-button" class="camera-button" style="display:none;">Take Photo</button>
+                <img id="uploaded-image" src="" alt="" width="1080" height="1920" style="object-fit: fill;">
+                <div class="details">
+                    <!--<input type="text" id="player-name" placeholder="Add Name">
+                    <input type="number" id="player-rating" placeholder="99" max="99" min="0"> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <button id="upload-photo-button" class="upload-button">Upload Photo</button>
+        <div class="form-group">
+            <label for="position">Position:</label>
+            <input type="text" id="position">
+        </div>
+        <div class="form-group">
+            <label for="country">Country:</label>
+            <input type="text" id="country">
+        </div>
+        <div class="form-group">
+            <label for="club">Club:</label>
+            <input type="text" id="club">
+        </div>
+        <button id="save-button" class="save-button">Save as Image</button>
+    </div>
+
+    <script src="scripts.js?v=1.0"></script>
+</body>
+</html>

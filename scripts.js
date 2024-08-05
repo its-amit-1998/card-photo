@@ -108,43 +108,12 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     const imageContainer = document.getElementById("image-container");
-    const card = document.getElementById("card-container");
     html2canvas(imageContainer)
     .then((canvas) => {
       const link = document.createElement("a");
       link.href = canvas.toDataURL("image/png");
       link.download = "custom-card.png";
       link.click();
-
-      // const outputCanvas = document.createElement("canvas");
-      // const ctx = outputCanvas.getContext("2d");
-      // outputCanvas.width = 1080;
-      // outputCanvas.height = 1920;
-
-      // const inputAspect = canvas.width / canvas.height;
-      // const outputAspect = outputCanvas.width / outputCanvas.height;
-
-      // let drawWidth, drawHeight;
-      // let offsetX = 0, offsetY = 0;
-
-      // if (inputAspect > outputAspect) {
-      //     // Input image is wider than output aspect ratio
-      //     drawHeight = outputCanvas.height;
-      //     drawWidth = drawHeight * inputAspect;
-      //     offsetX = (outputCanvas.width - drawWidth) / 2;
-      // } else {
-      //     // Input image is taller than output aspect ratio
-      //     drawWidth = outputCanvas.width;
-      //     drawHeight = drawWidth / inputAspect;
-      //     offsetY = (outputCanvas.height - drawHeight) / 2;
-      // }
-
-      // ctx.drawImage(canvas, offsetX, offsetY, drawWidth, drawHeight);
-
-      // const link = document.createElement("a");
-      // link.href = outputCanvas.toDataURL("image/png");
-      // link.download = "custom-card.png";
-      // link.click();
     })
     .catch((error) => {
       console.error("Error converting image to PNG:", error);

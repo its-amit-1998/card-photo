@@ -42,13 +42,13 @@ window.addEventListener("DOMContentLoaded", () => {
 
     video.style.display = "block";
     frame.style.display = "block";
-    takePhotoButton.style.display = "block";
 
     navigator.mediaDevices
       .getUserMedia({ video: { facingMode: "environment" } })
       .then((stream) => {
         video.srcObject = stream;
 
+        takePhotoButton.style.display = "block";
         takePhotoButton.addEventListener("click", function () {
           canvas.width = video.videoWidth;
           canvas.height = video.videoHeight;

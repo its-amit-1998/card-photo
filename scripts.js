@@ -107,16 +107,16 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const imageContainer = document.getElementById("image-container");
-    html2canvas(imageContainer)
-    .then((canvas) => {
-      const link = document.createElement("a");
-      link.href = canvas.toDataURL("image/png");
-      link.download = "custom-card.png";
-      link.click();
-    })
-    .catch((error) => {
-      console.error("Error converting image to PNG:", error);
-    });
+    const card = document.getElementById("card-container");
+    html2canvas(card)
+      .then((canvas) => {
+        const link = document.createElement("a");
+        link.href = canvas.toDataURL("image/png");
+        link.download = "custom-card.png";
+        link.click();
+      })
+      .catch((error) => {
+        console.error("Error converting image to PNG:", error);
+      });
   });
 });
